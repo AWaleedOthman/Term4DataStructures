@@ -6,6 +6,10 @@ public class MyCalculator implements ICalculator {
 
     @Override
     public float divide(int x, int y) throws RuntimeException {
-        return (float) x / y;
+        if (y == 0) {
+            throw new RuntimeException();
+        } else {
+            return (float) x / y;
+        }
     }
 }

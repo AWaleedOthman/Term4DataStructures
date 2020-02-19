@@ -1,3 +1,5 @@
+package Interfaces;
+
 public interface ICalculator {
     /**
      * Adds given two numbers

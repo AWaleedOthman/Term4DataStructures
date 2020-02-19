@@ -1,3 +1,8 @@
+package Tests;
+
+import Classes.MyCalculator;
+
+import static java.lang.Math.round;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MyCalculatorTest {
@@ -14,6 +19,7 @@ class MyCalculatorTest {
         try {
             assertEquals(-6, calc.divide(6, -1));
             assertEquals(2.5, calc.divide(5, 2));
+            assertEquals(0.33, round( calc.divide(1, 3) * 100) / 100.0);
             assertEquals(0, calc.divide(5, 0));
         } catch (RuntimeException e) {
             System.out.println("ERROR: division by zero");

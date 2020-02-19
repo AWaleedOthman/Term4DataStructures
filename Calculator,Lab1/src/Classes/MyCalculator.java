@@ -1,3 +1,7 @@
+package Classes;
+
+import Interfaces.ICalculator;
+
 public class MyCalculator implements ICalculator {
     @Override
     public int add(int x, int y) {

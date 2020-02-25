@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="204e006a-3d38-49cb-8426-15697683f797" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tests/MyCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator,Lab1/ICalculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator,Lab1/MyCalculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator,Lab1/MyCalculatorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ICalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/ICalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/MyCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyCalculatorTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="204e006a-3d38-49cb-8426-15697683f797" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,6 +130,7 @@
       <workItem from="1582032080581" duration="335000" />
       <workItem from="1582121884969" duration="165000" />
       <workItem from="1582131517876" duration="807000" />
+      <workItem from="1582135910911" duration="8000" />
     </task>
     <servers />
   </component>
@@ -183,10 +174,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="584" y="194" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1582131710570" />
-    <state x="477" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1582131518761">
+    <state x="477" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1582135911536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582131518761" />
+    <state x="477" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582135911536" />
     <state x="498" y="315" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1581780465258">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

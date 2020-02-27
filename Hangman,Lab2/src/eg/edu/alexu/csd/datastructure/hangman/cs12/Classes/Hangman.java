@@ -12,6 +12,15 @@ public class Hangman implements IHangman {
     private String randomSecretWord;
     String word;
 
+    public String getWord() {
+        return word;
+    }
+
+    public int getMaxWrongGuesses() {
+        return maxWrongGuesses;
+    }
+
+
     private boolean checkValid(String s) {
         for (char c : s.toCharArray()) {
             if (!(Character.isLetter(c))) {

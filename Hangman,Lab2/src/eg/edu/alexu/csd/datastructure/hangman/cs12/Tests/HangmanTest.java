@@ -24,6 +24,7 @@ class HangmanTest {
         try {
             String[] words = hm.readDictionary(file);
             hm.setDictionary(words);
+            assertArrayEquals(words, hm.getDictionary());
         } catch (Exception e) {
             System.out.println("No valid Words in file!");
             System.exit(0);
@@ -36,11 +37,15 @@ class HangmanTest {
             int i = 0;
             char c = carray[i];
             hm.setMaxWrongGuesses(5);
-            String temp = "";
+            assertEquals(5, hm.getMaxWrongGuesses());
+            String temp;
+            System.out.println(hm.getWord());
             do {
                 System.out.println("Test char is: " + c);
                 if ((temp = hm.guess(c)) != null) {
                     System.out.println(temp + "          " + hm.getFailedAttempts());
+                }else {
+                    System.out.println(hm.getWord());
                 }
                 i++;
                 c = carray[i];

@@ -21,9 +21,13 @@ class HangmanTest {
         Hangman hm = new Hangman();
         File file = new File("D:\\Uni\\Term4\\Data Structures\\Labs\\Term4DataStructures\\Hangman,Lab2\\src" +
                 "\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs12\\words.txt");
-        String[] words = hm.readDictionary(file);
-
-        hm.setDictionary(words);
+        try {
+            String[] words = hm.readDictionary(file);
+            hm.setDictionary(words);
+        } catch (Exception e) {
+            System.out.println("No valid Words in file!");
+            System.exit(0);
+        }
 
         String randomSecretWord = hm.selectRandomSecretWord();
         System.out.println("random secret word is: " + randomSecretWord);

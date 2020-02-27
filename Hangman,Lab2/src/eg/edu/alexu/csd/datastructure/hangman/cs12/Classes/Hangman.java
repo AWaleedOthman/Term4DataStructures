@@ -21,7 +21,7 @@ public class Hangman implements IHangman {
         return true;
     }
 
-    public String[] readDictionary(File dictionary) {
+    public String[] readDictionary(File dictionary) throws Exception {
 
         int i = 0;
         String thisLine;
@@ -34,6 +34,7 @@ public class Hangman implements IHangman {
                 if(checkValid(thisLine))
                     i++;
             }
+            if (i==0) throw new Exception();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -76,7 +77,7 @@ public class Hangman implements IHangman {
         /*
         already handled buggy words in readDictionary() but it is required to write the next line so...
          */
-        if(!checkValid(randomSecretWord)) throw new Exception();
+        if(!Character.isLetter(c) || !checkValid(randomSecretWord)) throw new Exception();
         if (!Character.isLetter(c)) {
             System.out.println("Invalid");
             return word;

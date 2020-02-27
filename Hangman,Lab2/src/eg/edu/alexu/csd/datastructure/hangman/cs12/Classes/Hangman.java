@@ -3,14 +3,23 @@ package eg.edu.alexu.csd.datastructure.hangman.cs12.Classes;
 import eg.edu.alexu.csd.datastructure.hangman.cs12.Interfaces.IHangman;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class Hangman implements IHangman {
 
     String[] dictionary;
+    boolean[] chosen = new boolean[26];
     int maxWrongGuesses, failedAttempts = 0;
     private String randomSecretWord;
     String word;
+
+    private boolean checkValid(String s) {
+        for (char c : s.toCharArray()) {
+            if (!(Character.isLetter(c))) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public String[] readDictionary(File dictionary) {
 
@@ -21,8 +30,9 @@ public class Hangman implements IHangman {
         try {
             FileReader fr = new FileReader(dictionary);
             BufferedReader br = new BufferedReader(fr);
-            while (br.readLine() != null) {
-                i++;
+            while ((thisLine = br.readLine()) != null) {
+                if(checkValid(thisLine))
+                    i++;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,13 +44,16 @@ public class Hangman implements IHangman {
             FileReader fr = new FileReader(dictionary);
             BufferedReader br = new BufferedReader(fr);
             while ((thisLine = br.readLine()) != null) {
-                words[i] = thisLine;
-                i++;
+                if(checkValid(thisLine)) {
+                    words[i] = thisLine;
+                    i++;
+                }
             }
+            br.close();
+            fr.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return words;
     }
 
@@ -60,7 +73,22 @@ public class Hangman implements IHangman {
 
     @Override
     public String guess(Character c) throws Exception {
+        /*
+        already handled buggy words in readDictionary() but it is required to write the next line so...
+         */
+        if(!checkValid(randomSecretWord)) throw new Exception();
+        if (!Character.isLetter(c)) {
+            System.out.println("Invalid");
+            return word;
+        }
         c = Character.toLowerCase(c);
+        int index = c - 'a';
+        if (chosen[index]) {
+            System.out.println("Already chosen!");
+            return word;
+        } else {
+            chosen[index] = true;
+        }
         char[] temp;
         boolean failed = true;
         for (int i = 0; i < randomSecretWord.length(); i++) {
@@ -75,8 +103,12 @@ public class Hangman implements IHangman {
             failedAttempts++;
         }
         if (failedAttempts == maxWrongGuesses) {
+            System.out.println("You Lost!");
             return null;
-        } else {
+        } else if (word.compareToIgnoreCase(randomSecretWord)==0){
+            System.out.println("You Won!");
+            return null;
+        }else {
             return word;
         }
     }
@@ -90,24 +122,12 @@ public class Hangman implements IHangman {
         }
     }
 
-    public int getMaxWrongGuesses() {
-        return maxWrongGuesses;
-    }
-
     public String[] getDictionary() {
         return dictionary;
     }
 
-    public char getInput() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Please enter your guess: ");
-        String temp = sc.nextLine();
-        while (temp.length() != 1) {
-            System.out.println("Invalid");
-            System.out.print("Please enter your guess: ");
-            temp = sc.nextLine();
-        }
-        return temp.charAt(0);
+    public String getFailedAttempts() {
+        return failedAttempts + " of " + maxWrongGuesses + " failed attempts.";
     }
 
 }

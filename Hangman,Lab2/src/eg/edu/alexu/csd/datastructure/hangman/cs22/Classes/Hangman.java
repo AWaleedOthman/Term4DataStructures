@@ -102,7 +102,7 @@ public class Hangman implements IHangman {
         char[] temp;
         boolean failed = true;
         for (int i = 0; i < randomSecretWord.length(); i++) {
-            if (c == randomSecretWord.charAt(i)) {
+            if (c == Character.toLowerCase(randomSecretWord.charAt(i))) {
                 temp = word.toCharArray();
                 temp[i] = c;
                 word = String.copyValueOf(temp);

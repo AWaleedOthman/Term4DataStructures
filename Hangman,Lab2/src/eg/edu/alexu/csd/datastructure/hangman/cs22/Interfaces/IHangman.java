@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.hangman.cs12.Interfaces;
+package eg.edu.alexu.csd.datastructure.hangman.cs22.Interfaces;
 
 public interface IHangman {
     /**

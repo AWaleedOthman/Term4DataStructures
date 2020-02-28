@@ -1,6 +1,6 @@
-package eg.edu.alexu.csd.datastructure.hangman.cs12.Tests;
+package eg.edu.alexu.csd.datastructure.hangman.cs22.Tests;
 
-import eg.edu.alexu.csd.datastructure.hangman.cs12.Classes.Hangman;
+import eg.edu.alexu.csd.datastructure.hangman.cs22.Classes.Hangman;
 
 import java.io.File;
 
@@ -20,7 +20,7 @@ class HangmanTest {
         }
         Hangman hm = new Hangman();
         File file = new File("D:\\Uni\\Term4\\Data Structures\\Labs\\Term4DataStructures\\Hangman,Lab2\\src" +
-                "\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs12\\words.txt");
+                "\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs22\\words.txt");
         try {
             String[] words = hm.readDictionary(file);
             hm.setDictionary(words);

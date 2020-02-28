@@ -1,6 +1,6 @@
-package eg.edu.alexu.csd.datastructure.hangman.cs12.Classes;
+package eg.edu.alexu.csd.datastructure.hangman.cs22.Classes;
 
-import eg.edu.alexu.csd.datastructure.hangman.cs12.Interfaces.IHangman;
+import eg.edu.alexu.csd.datastructure.hangman.cs22.Interfaces.IHangman;
 
 import java.io.*;
 
@@ -125,7 +125,7 @@ public class Hangman implements IHangman {
 
     @Override
     public void setMaxWrongGuesses(Integer max) {
-        if (max == null) {
+        if (max == null || max<= 0) {
             maxWrongGuesses = 1;
         }else {
             maxWrongGuesses = max;

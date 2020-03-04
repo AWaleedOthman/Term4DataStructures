@@ -7,6 +7,7 @@ public interface IPlayersFinder {
      * Two dimension array of photo contents
      * Will contain between 1 and 50 elements, inclusive
      * @param team
+     *
      * Identifier of the team
      * @param threshold
      * Minimum area for an element

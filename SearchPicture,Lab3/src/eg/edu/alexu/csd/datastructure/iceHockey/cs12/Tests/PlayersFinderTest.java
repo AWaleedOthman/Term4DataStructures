@@ -12,13 +12,16 @@ class PlayersFinderTest {
     void findPlayers() {
         PlayersFinder pf = new PlayersFinder();
         String[] test = {
-                "00JUBU00",
-                "0U3O4430",
-                "O33P44NB",
-                "PO3NSDP0",
-                "VNDSD330",
-                "OINFD00X"
+                "11111",
+                "1AAA1",
+                "1A1A1",
+                "1AAA1",
+                "11111"
         };
-        Point[] points = pf.findPlayers(test, 3, 16);
+        Point[] points = pf.findPlayers(test, 1, 3);
+        pf.sort(points);
+        for (Point point : points) {
+            System.out.println(point.x + " " + point.y);
+        }
     }
 }

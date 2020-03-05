@@ -18,7 +18,8 @@ class PlayersFinderTest {
 
         PlayersFinder pf = new PlayersFinder();
         int team, threshold, n;
-        int x,y;
+        int x, y;
+        String temp;
 
         Scanner sc = new Scanner(new File(System.getProperty("user.dir") +
                 "\\src\\eg\\edu\\alexu\\csd\\datastructure\\iceHockey\\cs12\\Tests\\tests.txt"));
@@ -29,18 +30,18 @@ class PlayersFinderTest {
             sc.nextLine();
             String[] test = new String[n];
             for (int i = 0; i < n; i++) {
-               test[i] = sc.nextLine();
+                test[i] = sc.nextLine();
             }
 
             ArrayList<Point> alExpected = new ArrayList<>();
-            String temp = sc.nextLine();
+            temp = sc.nextLine();
             Pattern pattern = Pattern.compile("[0-9]+");
             Matcher matcher = pattern.matcher(temp);
             while (matcher.find()) {
                 x = Integer.parseInt(temp.substring(matcher.start(), matcher.end()));
                 matcher.find();
                 y = Integer.parseInt(temp.substring(matcher.start(), matcher.end()));
-                alExpected.add(new Point(x,y));
+                alExpected.add(new Point(x, y));
             }
             //to Point[]
             Point[] expected = new Point[alExpected.size()];

@@ -62,8 +62,8 @@ public class SLinkedList implements ILinkedList {
     }
 
     @Override
-    public Object get(int index) {
-        if (index > size -1) return null;   //Out of boundary
+    public Object get(int index) throws ArrayIndexOutOfBoundsException {
+        if (index > size -1 || index < 0) throw new ArrayIndexOutOfBoundsException();   //Out of boundary
         Node current = start.next;
         for (int i = 0; i < index; i++) {
             current = current.next;

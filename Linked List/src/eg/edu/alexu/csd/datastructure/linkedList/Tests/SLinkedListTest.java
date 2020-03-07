@@ -12,10 +12,12 @@ class SLinkedListTest {
         ll.add("first element index zero");
         ll.add("second element index one");
         System.out.println(ll.get(0));
-    }
-
-    @org.junit.jupiter.api.Test
-    void clear() {
+        System.out.println(ll.get(1));
+        System.out.println(ll.isEmpty());
+        System.out.println(ll.size());
+        ll.clear();
+        System.out.println(ll.isEmpty());
+        System.out.println(ll.size());
     }
 
     @org.junit.jupiter.api.Test

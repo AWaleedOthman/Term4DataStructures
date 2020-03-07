@@ -8,15 +8,10 @@ public class SLinkedList implements ILinkedList {
     private Node end;
     private int size = 0;
 
-    public Node getStart() {
-        return start;
-    }
-
-    public Node getEnd() {
-        return end;
-    }
-
     public SLinkedList() {
+        /*
+        Dummy Start Node
+         */
         start = new Node();
         start.prev = null;
         start.content = null;
@@ -62,12 +57,18 @@ public class SLinkedList implements ILinkedList {
     public void add(Object element) {
         end.next = new Node();
         end = end.next;
+        end.content = element;
         size++;
     }
 
     @Override
     public Object get(int index) {
-        return null;
+        if (index > size -1) return null;   //Out of boundary
+        Node current = start.next;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.content;
     }
 
     @Override

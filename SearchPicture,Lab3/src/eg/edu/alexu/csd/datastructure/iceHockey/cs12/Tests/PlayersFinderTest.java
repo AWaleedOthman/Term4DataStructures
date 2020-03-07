@@ -28,6 +28,7 @@ class PlayersFinderTest {
             team = sc.nextInt();
             threshold = sc.nextInt();
             sc.nextLine();
+
             String[] test = new String[n];
             for (int i = 0; i < n; i++) {
                 test[i] = sc.nextLine();
@@ -56,6 +57,7 @@ class PlayersFinderTest {
                 assertEquals(expected[i].x, points[i].x);
                 assertEquals(expected[i].y, points[i].y);
             }
-        }
+
+        }   //END while
     }
 }
